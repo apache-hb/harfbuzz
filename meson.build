@@ -62,6 +62,7 @@ if host_machine.system() == 'windows'
   add_project_arguments(cpp.get_supported_arguments([
     '-Wa,-mbig-obj'
   ]), language : 'cpp')
+  add_project_arguments('-D_CRT_SECURE_NO_WARNINGS=1', language: ['c', 'cpp'])
 endif
 
 check_headers = [
