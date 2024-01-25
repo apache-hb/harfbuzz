@@ -1,9 +1,14 @@
 fs = import('fs')
 
+hb_cdata = configuration_data()
+hb_cdata.set('HB_VERSION_MAJOR', hb_version_major)
+hb_cdata.set('HB_VERSION_MINOR', hb_version_minor)
+hb_cdata.set('HB_VERSION_MICRO', hb_version_micro)
+
 hb_version_h = configure_file(
-               command: [find_program('gen-hb-version.py'), meson.project_version(), '@OUTPUT@', '@INPUT@'],
                input: 'hb-version.h.in',
                output: 'hb-version.h',
+               configuration: hb_cdata,
                install: true,
                install_dir: get_option('includedir') / meson.project_name())
 

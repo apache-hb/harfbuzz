@@ -60,7 +60,7 @@ HB_BEGIN_DECLS
  *
  * A string literal containing the library version available at compile-time.
  */
-#define HB_VERSION_STRING "@HB_VERSION@"
+#define HB_VERSION_STRING "@HB_VERSION_MAJOR@.@HB_VERSION_MINOR@.@HB_VERSION_MICRO@"
 
 /**
  * HB_VERSION_ATLEAST:
