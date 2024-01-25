@@ -427,7 +427,7 @@ else
 endif
 
 custom_target('harfbuzz.cc',
-  build_by_default: true,
+  build_by_default: not meson.is_subproject(),
   output: 'harfbuzz.cc',
   input: hb_base_sources + hb_glib_sources + hb_ft_sources +
          hb_graphite2_sources + hb_uniscribe_sources + hb_gdi_sources +
